@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maharashtra-multi-cuisine.vercel.app/sitemap.xml
