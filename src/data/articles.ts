@@ -177,8 +177,8 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Nagpur Food Chronicler & Heritage Chef',
       avatarText: 'TM'
     },
-    image: '/src/assets/images/kolhapuri_tambda_pandhra_rassa_1791952785970.jpg',
-    imageCaption: 'Simmering Saoji mutton curry glistening with the fiery black-red tarri oil layer, alongside warm bhakris and sliced red onions.',
+    image: '/src/assets/images/saoji_vidarbha_curry_1791974397402.jpg',
+    imageCaption: 'Authentic Vidarbha Saoji mutton curry slow-simmered in an iron vessel with its fiery black-red tarri oil layer and hot jowar bhakri.',
     excerpt: 'Saoji food is not merely spicy for the sake of shock value; it is a masterclass in slow-roasted whole spices, black stone flower, and lingering aromatic heat.',
     featured: false,
     introduction: [
@@ -336,8 +336,8 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Jalgaon Agri-Culinary Researcher',
       avatarText: 'GC'
     },
-    image: '/src/assets/images/misal_pav_pune_street_1791952787373.jpg',
-    imageCaption: 'A sizzling bowl of Khandeshi Shev Bhaji with its signature dark kala masala tarri and thick crunchy besan shev noodles.',
+    image: '/src/assets/images/khandeshi_shev_bhaji_curry_1791974397462.jpg',
+    imageCaption: 'A steaming bowl of Khandeshi Shev Bhaji with its signature dark charcoal-roasted kala masala tarri and thick crispy besan shev.',
     excerpt: 'In Khandesh, spice is not ground raw. It is pushed to the edge of darkness through patient smoke-roasting over charcoal.',
     featured: false,
     introduction: [
@@ -416,8 +416,8 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Pune Culinary Historian & Author',
       avatarText: 'RJ'
     },
-    image: '/src/assets/images/hero_maharashtrian_thali_1791952783658.jpg',
-    imageCaption: 'A serene Puneri meal with Varan Bhaat, golden toop, Katachi Amti, Matar Karanji, and melt-in-mouth Puran Poli.',
+    image: '/src/assets/images/pune_varan_bhaat_ghee_1791974397530.jpg',
+    imageCaption: 'A traditional serene Puneri feast with fragrant Varan Bhaat, golden saajuk toop, Katachi Amti, and Puran Poli.',
     excerpt: 'Puneri cuisine is an exercise in subtle elegance: onion and garlic take a backseat to sweet jaggery, nutty sesame, and aromatic Goda Masala.',
     featured: false,
     introduction: [
@@ -495,8 +495,8 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Agrarian Food Historian & Folklorist, Nanded',
       avatarText: 'BS'
     },
-    image: '/src/assets/images/kolhapuri_tambda_pandhra_rassa_1791952785970.jpg',
-    imageCaption: 'Golden steaming Pithla in a rustic brass thali with thick Bajra Bhakri, fresh green chili Thecha, and raw purple onions.',
+    image: '/src/assets/images/marathwada_pithla_thecha_bhakri_1791974399312.jpg',
+    imageCaption: 'Golden steaming Pithla in a rustic earthenware bowl with roasted Bajra Bhakri, hand-pounded green chili Thecha, and purple onions.',
     excerpt: 'When unexpected guests arrive in rural Maharashtra, you don’t panic—you whip up golden Pithla, pound fiery Thecha, and clap out a hot Bhakri in minutes.',
     featured: false,
     introduction: [
@@ -733,8 +733,8 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Indigenous Food Systems Preservationist',
       avatarText: 'SK'
     },
-    image: '/src/assets/images/hero_maharashtrian_thali_1791952783658.jpg',
-    imageCaption: 'Traditional sun-dried sun-cured condiments: spiced mango lonche in ceramic barni, crispy urad papad, and golden kurdai.',
+    image: '/src/assets/images/lonche_sandge_kurdai_preserves_1791974399228.jpg',
+    imageCaption: 'Traditional sun-dried pantry delicacies: spicy raw mango kairi lonche in an authentic ceramic barni, crispy wheat kurdai, and dal sandge.',
     excerpt: 'Before refrigeration and industrial food packaging, summer was Maharashtra’s pantry-building season, turning sunshine into long-lasting nutrition.',
     featured: false,
     introduction: [
