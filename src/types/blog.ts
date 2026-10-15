@@ -68,6 +68,7 @@ export interface BlogArticle {
   relatedKeywords?: string[];
   canonicalUrl?: string;
   h1Title?: string;
+  shortSlug?: string;
 }
 
 export interface UserComment {

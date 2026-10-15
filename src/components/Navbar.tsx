@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bookmark, Menu, X, Compass, Sparkles } from 'lucide-react';
+import { Bookmark, Menu, X, Compass, Sparkles, Link as LinkIcon } from 'lucide-react';
 
 interface NavbarProps {
   currentTab: 'articles' | 'regions' | 'spices' | 'about' | 'bookmarks';
@@ -7,12 +7,14 @@ interface NavbarProps {
   bookmarkCount: number;
   onOpenArticle?: (id: string) => void;
   onSelectRegion?: (region: string) => void;
+  onOpenShortUrls?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   currentTab,
   onSelectTab,
-  bookmarkCount
+  bookmarkCount,
+  onOpenShortUrls
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -110,7 +112,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Zone 3: Primary Action */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {onOpenShortUrls && (
+              <button
+                type="button"
+                onClick={onOpenShortUrls}
+                className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg text-amber-950 bg-amber-100/70 hover:bg-amber-200/80 border border-amber-300 transition-colors shrink-0 shadow-xs"
+                title="View and copy all short URLs"
+              >
+                <LinkIcon className="w-3.5 h-3.5 text-amber-800" />
+                <span className="hidden sm:inline">Short URLs</span>
+              </button>
+            )}
+
             <a
               href="/bookmarks"
               onClick={(e) => {
@@ -210,6 +224,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               Saved Stories ({bookmarkCount})
             </a>
+            {onOpenShortUrls && (
+              <button
+                type="button"
+                onClick={() => {
+                  onOpenShortUrls();
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full text-left px-3 py-2 text-sm font-semibold rounded-md text-amber-950 bg-amber-100/60 hover:bg-amber-100 flex items-center gap-2 transition-colors"
+              >
+                <LinkIcon className="w-4 h-4 text-amber-800" />
+                <span>Short URLs Directory (Quick Copy)</span>
+              </button>
+            )}
           </div>
         )}
       </div>

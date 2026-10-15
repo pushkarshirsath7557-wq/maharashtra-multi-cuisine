@@ -11,6 +11,7 @@ import { SpiceHeritageView } from './components/SpiceHeritageView';
 import { BookmarksView } from './components/BookmarksView';
 import { AboutView } from './components/AboutView';
 import { Footer } from './components/Footer';
+import { ShortUrlModal } from './components/ShortUrlModal';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { updateDocumentSeo } from './utils/seo';
 
@@ -21,9 +22,36 @@ interface RouteState {
   articleId: string | null;
 }
 
-// Redirect dictionary for backward compatibility with old IDs and hash shortcuts
+// Redirect dictionary for backward compatibility and ultra-short URLs
 const REDIRECT_MAP: Record<string, string> = {
-  // Legacy / long article IDs -> new short descriptive clean URLs
+  // Ultra-short memorable URLs & aliases
+  'street-food': 'maharashtrian-street-food',
+  'vada-pav': 'maharashtrian-street-food',
+  'misal-pav': 'maharashtrian-street-food',
+  'kolhapuri': 'kolhapuri-cuisine',
+  'kolhapur': 'kolhapuri-cuisine',
+  'malvani': 'malvani-cuisine',
+  'malvan': 'malvani-cuisine',
+  'thali': 'maharashtrian-thali',
+  'saoji': 'saoji-cuisine',
+  'khandesh': 'khandeshi-cuisine',
+  'khandeshi': 'khandeshi-cuisine',
+  'puneri': 'puneri-cuisine',
+  'pune': 'puneri-cuisine',
+  'marathwada': 'marathwada-cuisine',
+  'modak': 'ukdiche-modak',
+  'preserves': 'traditional-preserves',
+  'lonche': 'traditional-preserves',
+  'koli': 'koli-seafood',
+  'seafood': 'koli-seafood',
+
+  // Tab shortcuts / short tab URLs
+  'regions': 'regional-cuisines',
+  'spices': 'spice-heritage',
+  'saved': 'bookmarks',
+  'saved-stories': 'bookmarks',
+
+  // Legacy / long article IDs -> canonical clean URLs
   'architecture-of-maharashtrian-thali': 'maharashtrian-thali',
   'fire-of-vidarbha-saoji-cuisine': 'saoji-cuisine',
   'khandesh-black-gold-kala-masala-shev-bhaji': 'khandeshi-cuisine',
@@ -35,11 +63,6 @@ const REDIRECT_MAP: Record<string, string> = {
   'koli-fisherfolk-bounties-bombil-crabs': 'koli-seafood',
   'konkan-malvan-coastal-alchemy': 'malvani-cuisine',
   'kolhapur-royal-rassa-tambda-pandhra': 'kolhapuri-cuisine',
-  // Tab shortcuts / legacy hash targets
-  'regions': 'regional-cuisines',
-  'spices': 'spice-heritage',
-  'saved': 'bookmarks',
-  'saved-stories': 'bookmarks',
 };
 
 // Helper to resolve route path and eliminate any #, symbols, random numbers or IDs
@@ -96,8 +119,8 @@ function resolveCurrentRoute(): RouteState {
     return { tab: 'bookmarks', articleId: null };
   }
 
-  // Article routes
-  const matchedArticle = ARTICLES.find((a) => a.id === candidate);
+  // Article routes (by canonical ID or short slug)
+  const matchedArticle = ARTICLES.find((a) => a.id === candidate || a.shortSlug === candidate);
   if (matchedArticle) {
     if (window.location.pathname !== `/${matchedArticle.id}` || window.location.hash) {
       window.history.replaceState({}, '', `/${matchedArticle.id}`);
@@ -117,6 +140,7 @@ export default function App() {
   const initialRoute = resolveCurrentRoute();
   const [currentTab, setCurrentTab] = useState<NavTab>(initialRoute.tab);
   const [activeArticleId, setActiveArticleId] = useState<string | null>(initialRoute.articleId);
+  const [shortUrlModalOpen, setShortUrlModalOpen] = useState<boolean>(false);
 
   // Filters State
   const [selectedRegion, setSelectedRegion] = useState<string>('All');
@@ -192,7 +216,8 @@ export default function App() {
   };
 
   const handleOpenArticle = (id: string) => {
-    const targetId = REDIRECT_MAP[id] || id;
+    const targetArticle = ARTICLES.find((a) => a.id === id || a.shortSlug === id);
+    const targetId = targetArticle ? targetArticle.id : (REDIRECT_MAP[id] || id);
     setActiveArticleId(targetId);
     setCurrentTab('articles');
     window.history.pushState({}, '', `/${targetId}`);
@@ -412,6 +437,7 @@ export default function App() {
         onSelectTab={handleSelectTab}
         bookmarkCount={bookmarks.length}
         onOpenArticle={handleOpenArticle}
+        onOpenShortUrls={() => setShortUrlModalOpen(true)}
       />
 
       {/* Main View Switcher */}
@@ -723,6 +749,29 @@ export default function App() {
           handleSelectTab('articles');
         }}
         onReadArticle={handleOpenArticle}
+        onOpenShortUrls={() => setShortUrlModalOpen(true)}
+      />
+
+      {/* Interactive Short URLs Directory Modal */}
+      <ShortUrlModal
+        isOpen={shortUrlModalOpen}
+        onClose={() => setShortUrlModalOpen(false)}
+        onNavigate={(path) => {
+          const cleanPath = path.replace(/^\/+|\/+$/g, '');
+          if (!cleanPath) {
+            handleBackToHome();
+          } else if (cleanPath === 'regional-cuisines' || cleanPath === 'regions') {
+            handleSelectTab('regions');
+          } else if (cleanPath === 'spice-heritage' || cleanPath === 'spices') {
+            handleSelectTab('spices');
+          } else if (cleanPath === 'about') {
+            handleSelectTab('about');
+          } else if (cleanPath === 'bookmarks' || cleanPath === 'saved') {
+            handleSelectTab('bookmarks');
+          } else {
+            handleOpenArticle(cleanPath);
+          }
+        }}
       />
     </div>
   );

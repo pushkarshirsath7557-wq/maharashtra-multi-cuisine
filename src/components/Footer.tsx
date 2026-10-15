@@ -6,12 +6,14 @@ interface FooterProps {
   onSelectTab: (tab: 'articles' | 'regions' | 'spices' | 'about' | 'bookmarks') => void;
   onSelectRegion: (region: RegionType) => void;
   onReadArticle: (articleId: string) => void;
+  onOpenShortUrls?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onSelectTab,
   onSelectRegion,
-  onReadArticle
+  onReadArticle,
+  onOpenShortUrls
 }) => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -191,6 +193,15 @@ export const Footer: React.FC<FooterProps> = ({
             >
               Spice Glossary
             </a>
+            {onOpenShortUrls && (
+              <button
+                type="button"
+                onClick={onOpenShortUrls}
+                className="hover:text-amber-400 text-amber-500/90 font-medium transition-colors"
+              >
+                ⚡ Short URLs
+              </button>
+            )}
             <a 
               href="/" 
               onClick={(e) => {

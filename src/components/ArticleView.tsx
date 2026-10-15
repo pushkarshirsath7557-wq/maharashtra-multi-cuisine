@@ -12,7 +12,11 @@ import {
   Sparkles,
   BookOpen,
   ArrowRight,
-  Printer
+  Printer,
+  Link as LinkIcon,
+  Copy,
+  Check,
+  X
 } from 'lucide-react';
 import { BlogArticle, UserComment } from '../types/blog';
 
@@ -40,6 +44,14 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
   const [scrollProgress, setScrollProgress] = useState(0);
   const [fontSize, setFontSize] = useState<'standard' | 'large' | 'relaxed'>('standard');
   const [copiedToast, setCopiedToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('Link copied to clipboard!');
+  const [shareModalOpen, setShareModalOpen] = useState(false);
+  const [copiedField, setCopiedField] = useState<'short' | 'canonical' | null>(null);
+
+  // Short URL slug
+  const shortSlug = article.shortSlug || article.id;
+  const shortUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/${shortSlug}`;
+  const canonicalUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/${article.id}`;
 
   // New comment form state
   const [commentName, setCommentName] = useState('');
@@ -65,12 +77,34 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleShare = () => {
+  const handleCopyShortUrl = () => {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(shortUrl);
+      setToastMessage(`Short URL copied: /${shortSlug}`);
       setCopiedToast(true);
-      setTimeout(() => setCopiedToast(false), 2500);
+      setCopiedField('short');
+      setTimeout(() => {
+        setCopiedToast(false);
+        setCopiedField(null);
+      }, 2500);
     }
+  };
+
+  const handleCopyCanonicalUrl = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(canonicalUrl);
+      setToastMessage(`Canonical URL copied: /${article.id}`);
+      setCopiedToast(true);
+      setCopiedField('canonical');
+      setTimeout(() => {
+        setCopiedToast(false);
+        setCopiedField(null);
+      }, 2500);
+    }
+  };
+
+  const handleShare = () => {
+    setShareModalOpen(true);
   };
 
   const handlePrint = () => {
@@ -168,11 +202,27 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
               <Printer className="w-4 h-4" />
             </button>
 
-            {/* Share */}
+            {/* Short URL Direct Copy Button */}
+            <button
+              onClick={handleCopyShortUrl}
+              className="flex items-center gap-1.5 px-2 sm:px-2.5 py-1 text-xs font-medium text-amber-900 bg-amber-50 hover:bg-amber-100 rounded-md border border-amber-300 transition-colors"
+              title={`Copy Short URL (/${shortSlug})`}
+            >
+              <LinkIcon className="w-3.5 h-3.5 text-amber-800" />
+              <span className="hidden sm:inline">Short URL:</span>
+              <span className="font-mono text-[11px] font-semibold">/{shortSlug}</span>
+              {copiedField === 'short' ? (
+                <Check className="w-3.5 h-3.5 text-emerald-600 ml-0.5" />
+              ) : (
+                <Copy className="w-3.5 h-3.5 text-amber-700 opacity-70 ml-0.5" />
+              )}
+            </button>
+
+            {/* Share & URLs Modal Trigger */}
             <button
               onClick={handleShare}
               className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-md border border-stone-300 transition-colors"
-              title="Share article link"
+              title="Share and copy URLs"
             >
               <Share2 className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Share</span>
@@ -196,9 +246,112 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
       {/* Toast Notification */}
       {copiedToast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-stone-900 text-stone-100 text-xs px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in">
+        <div className="fixed bottom-6 right-6 z-50 bg-stone-900 text-stone-100 text-xs px-4 py-2.5 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in border border-stone-700">
           <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-          <span>Article link copied to clipboard</span>
+          <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* Share & Short URL Modal */}
+      {shareModalOpen && (
+        <div className="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-stone-200 relative animate-in fade-in zoom-in-95 duration-150">
+            <button
+              onClick={() => setShareModalOpen(false)}
+              className="absolute top-4 right-4 p-1.5 text-stone-400 hover:text-stone-800 rounded-lg hover:bg-stone-100 transition-colors"
+              aria-label="Close share dialog"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center gap-2 mb-2 text-xs font-sans uppercase tracking-wider text-amber-800 font-semibold">
+              <LinkIcon className="w-4 h-4" />
+              <span>Share & Short Links</span>
+            </div>
+            
+            <h3 className="font-serif text-xl font-bold text-stone-900 mb-1">
+              Article URLs
+            </h3>
+            <p className="text-xs text-stone-600 mb-5">
+              Copy the ultra-short URL for easy sharing or the full descriptive canonical URL for SEO.
+            </p>
+
+            <div className="space-y-4">
+              {/* Option 1: Ultra Short URL */}
+              <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/90">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-bold text-amber-950 flex items-center gap-1.5">
+                    <span>⚡ Ultra-Short URL</span>
+                    <span className="text-[10px] font-normal uppercase tracking-wider bg-amber-200/80 text-amber-900 px-1.5 py-0.2 rounded font-sans">
+                      Compact
+                    </span>
+                  </span>
+                  <button
+                    onClick={handleCopyShortUrl}
+                    className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold bg-amber-900 text-white hover:bg-amber-950 rounded-md transition-colors"
+                  >
+                    {copiedField === 'short' ? (
+                      <>
+                        <Check className="w-3.5 h-3.5" />
+                        <span>Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>Copy</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+                <div className="font-mono text-xs text-amber-950 break-all select-all bg-white/80 p-2 rounded border border-amber-200">
+                  {shortUrl}
+                </div>
+                <div className="mt-1 text-[11px] text-amber-800/80 font-sans">
+                  Direct short path: <code className="font-bold">/{shortSlug}</code>
+                </div>
+              </div>
+
+              {/* Option 2: Full Canonical SEO URL */}
+              <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-bold text-stone-900">
+                    Canonical SEO URL
+                  </span>
+                  <button
+                    onClick={handleCopyCanonicalUrl}
+                    className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold bg-stone-800 text-white hover:bg-stone-900 rounded-md transition-colors"
+                  >
+                    {copiedField === 'canonical' ? (
+                      <>
+                        <Check className="w-3.5 h-3.5" />
+                        <span>Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>Copy</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+                <div className="font-mono text-xs text-stone-800 break-all select-all bg-white p-2 rounded border border-stone-200">
+                  {canonicalUrl}
+                </div>
+                <div className="mt-1 text-[11px] text-stone-500 font-sans">
+                  Target path: <code className="font-bold">/{article.id}</code>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-end">
+              <button
+                onClick={() => setShareModalOpen(false)}
+                className="px-4 py-1.5 text-xs font-medium text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors"
+              >
+                Done
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
