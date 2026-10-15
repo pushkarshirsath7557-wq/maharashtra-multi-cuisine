@@ -36,14 +36,22 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({ article, onReadArtic
               </span>
             </div>
 
-            {/* Dominant Headline */}
-            <h1 
-              onClick={() => onReadArticle(article.id)}
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-[1.15] cursor-pointer hover:text-amber-950 transition-colors"
+            {/* Lead Story Headline */}
+            <h2 
+              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-[1.15]"
               style={{ textWrap: 'balance' }}
             >
-              {article.title}
-            </h1>
+              <a
+                href={`/${article.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle(article.id);
+                }}
+                className="hover:text-amber-950 transition-colors"
+              >
+                {article.title}
+              </a>
+            </h2>
 
             {/* Subtitle / Excerpt */}
             <p className="text-base sm:text-lg text-stone-700 leading-relaxed max-w-2xl font-sans">
@@ -56,13 +64,17 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({ article, onReadArtic
 
             {/* Byline & CTA */}
             <div className="pt-2 flex flex-wrap items-center gap-6">
-              <button
-                onClick={() => onReadArticle(article.id)}
+              <a
+                href={`/${article.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle(article.id);
+                }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-900 text-stone-100 text-sm font-medium rounded-lg hover:bg-amber-950 active:scale-[0.98] transition-all shadow-sm group"
               >
                 <span>Read Full Chronicle</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
               <div className="text-xs text-stone-600">
                 <span className="font-medium text-stone-900">{article.author.name}</span>
@@ -75,23 +87,30 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({ article, onReadArtic
 
           {/* Visual Column */}
           <div className="lg:col-span-5">
-            <div 
-              onClick={() => onReadArticle(article.id)}
-              className="relative rounded-xl overflow-hidden border border-stone-300/80 shadow-md group cursor-pointer bg-stone-200 aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/3]"
+            <a
+              href={`/${article.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onReadArticle(article.id);
+              }}
+              className="block relative rounded-xl overflow-hidden border border-stone-300/80 shadow-md group cursor-pointer bg-stone-200 aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/3]"
             >
               <img
                 src={article.image}
-                alt={article.title}
+                alt={article.imageAlt || article.imageCaption || article.title}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 loading="eager"
+                onError={(e) => {
+                  e.currentTarget.classList.add('opacity-0');
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-stone-950/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
               
               <div className="absolute bottom-3 left-4 right-4 text-xs text-stone-200 line-clamp-1 italic font-serif">
                 {article.imageCaption}
               </div>
-            </div>
+            </a>
           </div>
 
         </div>

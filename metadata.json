@@ -1,6 +1,6 @@
 {
-  "name": "Pangat - Maharashtrian Culinary Chronicles",
-  "description": "An authentic editorial journal exploring the regional multi-cuisines of Maharashtra: from coastal Konkan and fiery Kolhapur to Saoji, Khandesh, and heritage festive feasts.",
+  "name": "Maharashtra Cuisine: Traditional Food and Flavours",
+  "description": "Explore Maharashtra cuisine, from famous street foods and traditional Maharashtrian meals to spicy Kolhapuri dishes and coastal Malvani specialities.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

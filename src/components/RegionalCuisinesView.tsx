@@ -25,7 +25,7 @@ const REGIONS: RegionInfo[] = [
     landscape: 'Sun-drenched Arabian Sea coastline, red laterite cliffs, coconut groves, and mangrove backwaters.',
     flavorSummary: 'Tart, fresh, aromatic: anchored by Kokum (Aamsul), fresh wet coconut, wild Tirphal, and morning catch.',
     keyStaples: ['Surmai & Pomfret Curry', 'Solkadhi', 'Ghavane (Rice Crepes)', 'Tisrya Masala (Clams)'],
-    flagshipArticleId: 'konkan-malvan-coastal-alchemy'
+    flagshipArticleId: 'malvani-cuisine'
   },
   {
     name: 'Kolhapur',
@@ -34,7 +34,7 @@ const REGIONS: RegionInfo[] = [
     landscape: 'Panchganga river basin, historic wrestling akharas, royal palaces, and sugarcane country.',
     flavorSummary: 'Bold, royal, and binary: fiery red Tambda Rassa paired with soothing, ivory-white Pandhra Rassa.',
     keyStaples: ['Tambda Rassa', 'Pandhra Rassa', 'Mutton Sukka', 'Jowar Bhakri', 'Kolhapuri Misal'],
-    flagshipArticleId: 'kolhapur-royal-rassa-tambda-pandhra'
+    flagshipArticleId: 'kolhapuri-cuisine'
   },
   {
     name: 'Vidarbha & Saoji',
@@ -43,7 +43,7 @@ const REGIONS: RegionInfo[] = [
     landscape: 'Arid black cotton soils, teak forests of Tadoba, and historic handloom weaving settlements in Nagpur.',
     flavorSummary: 'Complex, persistent heat: slow-rendered whole spices, Dagad Phool, poppy seeds, and fiery floating Tarri.',
     keyStaples: ['Saoji Mutton / Chicken', 'Patodi Rassa', 'Gola Bhaat', 'Poha Chivda'],
-    flagshipArticleId: 'fire-of-vidarbha-saoji-cuisine'
+    flagshipArticleId: 'saoji-cuisine'
   },
   {
     name: 'Khandesh',
@@ -52,7 +52,7 @@ const REGIONS: RegionInfo[] = [
     landscape: 'Satpura mountain ranges, fertile banana plantations of Jalgaon, and dry plateau highways.',
     flavorSummary: 'Smoky, midnight-dark: charcoal-roasted coconut and coriander seeds in iron pots, yielding deep umami.',
     keyStaples: ['Shev Bhaji', 'Jalgaon Baingan Bharta', 'Kalna Puri', 'Khandeshi Khichdi'],
-    flagshipArticleId: 'khandesh-black-gold-kala-masala-shev-bhaji'
+    flagshipArticleId: 'khandeshi-cuisine'
   },
   {
     name: 'Pune & Desh',
@@ -61,7 +61,7 @@ const REGIONS: RegionInfo[] = [
     landscape: 'Sahyadri river valleys, historic Peshwa wadas, fertile Krishna and Bhima river plains.',
     flavorSummary: 'Gentle, balanced, sweet-tangy: stone flower and cinnamon-infused Goda Masala, jaggery, and pure cow ghee.',
     keyStaples: ['Varan Bhaat with Toop', 'Puran Poli', 'Katachi Amti', 'Bharli Vangi', 'Matar Karanji'],
-    flagshipArticleId: 'brahmin-kitchens-of-pune-goda-masala'
+    flagshipArticleId: 'puneri-cuisine'
   },
   {
     name: 'Marathwada',
@@ -70,7 +70,7 @@ const REGIONS: RegionInfo[] = [
     landscape: 'Semi-arid basalt plateaus, Ajanta & Ellora caves, ancient Godavari river towns.',
     flavorSummary: 'Rustic, nourishing, and resilient: dryland millets, golden gram flour stews, and cast-iron pounded garlic thecha.',
     keyStaples: ['Pithla Bhakri', 'Mirchi cha Thecha', 'Zunka', 'Sesame Bajra Bhakri'],
-    flagshipArticleId: 'marathwada-rustic-resilience-pithla-bhakri'
+    flagshipArticleId: 'marathwada-cuisine'
   }
 ];
 
@@ -135,13 +135,17 @@ export const RegionalCuisinesView: React.FC<RegionalCuisinesViewProps> = ({
             </div>
 
             <div className="pt-4 border-t border-stone-100 flex items-center justify-between gap-2">
-              <button
-                onClick={() => onReadArticle(reg.flagshipArticleId)}
+              <a
+                href={`/${reg.flagshipArticleId}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle(reg.flagshipArticleId);
+                }}
                 className="text-xs font-semibold text-amber-900 hover:text-amber-950 flex items-center gap-1 group"
               >
                 <span>Read Chronicle</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
               <button
                 onClick={() => onSelectRegionAndFilter(reg.name)}

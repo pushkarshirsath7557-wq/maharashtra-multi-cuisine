@@ -49,60 +49,84 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
 
-          {/* Regional Cuisines Directory */}
+          {/* Regional Cuisines Directory & Featured Pages */}
           <div className="lg:col-span-4 space-y-3">
             <h4 className="text-xs font-sans uppercase tracking-widest text-stone-400 font-semibold">
-              Regional Chronicles
+              Featured Articles & Terroirs
             </h4>
-            <div className="grid grid-cols-2 gap-2 text-xs text-stone-400">
-              <button 
-                onClick={() => { onSelectTab('articles'); onSelectRegion('Konkan & Malvan'); }}
+            <div className="flex flex-col gap-1.5 text-xs text-stone-400">
+              <a 
+                href="/maharashtrian-street-food"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle('maharashtrian-street-food');
+                }}
                 className="text-left hover:text-white transition-colors"
               >
-                Konkan & Malvan
-              </button>
-              <button 
-                onClick={() => { onSelectTab('articles'); onSelectRegion('Kolhapur'); }}
+                Maharashtrian Street Food: Famous Local Dishes
+              </a>
+              <a 
+                href="/kolhapuri-cuisine"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle('kolhapuri-cuisine');
+                }}
                 className="text-left hover:text-white transition-colors"
               >
-                Kolhapur Rassa
-              </button>
-              <button 
-                onClick={() => { onSelectTab('articles'); onSelectRegion('Vidarbha & Saoji'); }}
+                Kolhapuri Cuisine: Famous Dishes and Flavours
+              </a>
+              <a 
+                href="/malvani-cuisine"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle('malvani-cuisine');
+                }}
                 className="text-left hover:text-white transition-colors"
               >
-                Vidarbha Saoji
-              </button>
-              <button 
-                onClick={() => { onSelectTab('articles'); onSelectRegion('Khandesh'); }}
-                className="text-left hover:text-white transition-colors"
-              >
-                Khandesh Kala Masala
-              </button>
-              <button 
-                onClick={() => { onSelectTab('articles'); onSelectRegion('Pune & Desh'); }}
-                className="text-left hover:text-white transition-colors"
-              >
-                Pune & Goda Masala
-              </button>
-              <button 
-                onClick={() => { onSelectTab('articles'); onSelectRegion('Marathwada'); }}
-                className="text-left hover:text-white transition-colors"
-              >
-                Marathwada Millets
-              </button>
-              <button 
-                onClick={() => { onSelectTab('articles'); onSelectRegion('Mumbai & Street'); }}
-                className="text-left hover:text-white transition-colors"
-              >
-                Mumbai Street Food
-              </button>
-              <button 
-                onClick={() => onSelectTab('spices')}
-                className="text-left hover:text-white transition-colors text-amber-500 font-medium"
-              >
-                Spice Atlas →
-              </button>
+                Malvani Cuisine: Traditional Coastal Food
+              </a>
+              <div className="pt-2 grid grid-cols-2 gap-2 text-[11px] text-stone-400 border-t border-stone-800/80">
+                <a 
+                  href="/saoji-cuisine"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle('saoji-cuisine');
+                  }}
+                  className="text-left hover:text-white transition-colors"
+                >
+                  Vidarbha Saoji
+                </a>
+                <a 
+                  href="/khandeshi-cuisine"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle('khandeshi-cuisine');
+                  }}
+                  className="text-left hover:text-white transition-colors"
+                >
+                  Khandesh Shev Bhaji
+                </a>
+                <a 
+                  href="/puneri-cuisine"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle('puneri-cuisine');
+                  }}
+                  className="text-left hover:text-white transition-colors"
+                >
+                  Puneri Goda Masala
+                </a>
+                <a 
+                  href="/spice-heritage"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectTab('spices');
+                  }}
+                  className="text-left hover:text-white transition-colors text-amber-500 font-medium"
+                >
+                  Spice Atlas →
+                </a>
+              </div>
             </div>
           </div>
 
@@ -147,15 +171,36 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-sans">
           <p>© 2026 Pangat Journal. All rights reserved. Celebrating indigenous culinary biodiversity.</p>
           <div className="flex items-center gap-6">
-            <button onClick={() => onSelectTab('about')} className="hover:text-stone-300 transition-colors">
+            <a 
+              href="/about" 
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('about');
+              }} 
+              className="hover:text-stone-300 transition-colors"
+            >
               Editorial Policy
-            </button>
-            <button onClick={() => onSelectTab('spices')} className="hover:text-stone-300 transition-colors">
+            </a>
+            <a 
+              href="/spice-heritage" 
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('spices');
+              }} 
+              className="hover:text-stone-300 transition-colors"
+            >
               Spice Glossary
-            </button>
-            <button onClick={() => onSelectTab('articles')} className="hover:text-stone-300 transition-colors">
+            </a>
+            <a 
+              href="/" 
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('articles');
+              }} 
+              className="hover:text-stone-300 transition-colors"
+            >
               Article Archive
-            </button>
+            </a>
           </div>
         </div>
 

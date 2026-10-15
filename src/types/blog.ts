@@ -53,6 +53,7 @@ export interface BlogArticle {
   author: Author;
   image: string;
   imageCaption: string;
+  imageAlt?: string;
   excerpt: string;
   introduction: string[];
   keyHighlights: string[];
@@ -61,6 +62,12 @@ export interface BlogArticle {
   conclusion: string;
   tags: string[];
   featured?: boolean;
+  seoTitle?: string;
+  metaDescription?: string;
+  mainKeyword?: string;
+  relatedKeywords?: string[];
+  canonicalUrl?: string;
+  h1Title?: string;
 }
 
 export interface UserComment {

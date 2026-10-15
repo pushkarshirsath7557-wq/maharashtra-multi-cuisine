@@ -44,13 +44,17 @@ export const BookmarksView: React.FC<BookmarksViewProps> = ({
             As you browse through the 10 chronicles across Konkan, Kolhapur, Vidarbha, and Desh, tap the bookmark icon on any card or article to preserve it here.
           </p>
           <div className="pt-2">
-            <button
-              onClick={onExploreAll}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onExploreAll();
+              }}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-900 text-stone-100 text-sm font-medium rounded-lg hover:bg-amber-950 transition-colors"
             >
-              <span>Explore All 10 Chronicles</span>
+              <span>Explore All 11 Chronicles</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
       ) : (

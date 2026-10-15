@@ -144,9 +144,13 @@ export const SpiceHeritageView: React.FC<SpiceHeritageViewProps> = ({ onReadArti
               </h4>
               <div className="space-y-2">
                 {relatedArticles.map((art) => (
-                  <button
+                  <a
                     key={art.id}
-                    onClick={() => onReadArticle(art.id)}
+                    href={`/${art.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onReadArticle(art.id);
+                    }}
                     className="w-full text-left p-3 rounded-lg bg-stone-50 hover:bg-stone-100 border border-stone-200 transition-colors flex items-center justify-between group"
                   >
                     <div>
@@ -158,7 +162,7 @@ export const SpiceHeritageView: React.FC<SpiceHeritageViewProps> = ({ onReadArti
                       </span>
                     </div>
                     <ArrowRight className="w-4 h-4 text-stone-400 group-hover:text-amber-900 group-hover:translate-x-1 transition-transform shrink-0 ml-3" />
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>

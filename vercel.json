@@ -2,6 +2,13 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "redirects": [
+    {
+      "source": "/street-food-symphony-mumbai-misal-vada-pav",
+      "destination": "/maharashtrian-street-food",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

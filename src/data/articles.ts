@@ -2,8 +2,14 @@ import { BlogArticle } from '../types/blog';
 
 export const ARTICLES: BlogArticle[] = [
   {
-    id: 'architecture-of-maharashtrian-thali',
+    id: 'maharashtrian-thali',
     title: 'The Architecture of the Maharashtrian Thali: The Sacred Balance of the Shadrasas',
+    h1Title: 'Architecture of the Maharashtrian Thali',
+    seoTitle: 'Maharashtrian Thali: Sacred Geometry & Flavours',
+    metaDescription: 'Explore the traditional Maharashtrian thali, from the sacred balance of shadrasas to festive puran poli, varan bhaat and digestive amti on a banana leaf.',
+    mainKeyword: 'Maharashtrian thali',
+    relatedKeywords: ['traditional food of Maharashtra', 'puran poli', 'varan bhaat'],
+    canonicalUrl: '/maharashtrian-thali',
     subtitle: 'From salt at the apex to sweet poli on the right, how ancient dietary science shaped the quintessential banquet plate.',
     region: 'Pan-Maharashtra',
     category: 'Culinary Philosophy',
@@ -16,8 +22,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Culinary Anthropologist & Food Historian',
       avatarText: 'AD'
     },
-    image: '/src/assets/images/hero_maharashtrian_thali_1791952783658.jpg',
+    image: '/images/maharashtra-cuisine-traditional-thali.jpg',
     imageCaption: 'A traditional festive banquet thali featuring Puran Poli, Basmati Bhat, Katachi Amti, and Batata Bhaji arranged according to Pangat protocol.',
+    imageAlt: 'Authentic Maharashtra cuisine traditional thali banquet with Puran Poli, Varan Bhaat, Katachi Amti, and Batata Bhaji on a banana leaf',
     excerpt: 'The Maharashtrian thali is not an arbitrary assembly of dishes; it is a sacred geometric mandala designed around the six Ayurvedic tastes and sequential digestion.',
     featured: true,
     introduction: [
@@ -83,8 +90,14 @@ export const ARTICLES: BlogArticle[] = [
     tags: ['Thali', 'Pangat', 'Ayurveda', 'Tradition', 'Festive Feast', 'Vegetarian']
   },
   {
-    id: 'konkan-malvan-coastal-alchemy',
-    title: 'Konkan & Malvan: The Coastal Alchemy of Coconut, Kokum, and Fresh Catch',
+    id: 'malvani-cuisine',
+    title: 'Malvani Cuisine: Traditional Coastal Food',
+    h1Title: 'Malvani Cuisine: Traditional Coastal Food',
+    seoTitle: 'Malvani Cuisine: Traditional Coastal Food',
+    metaDescription: "Explore Malvani cuisine from Maharashtra's Konkan coast, including fish curry, coconut-based dishes and aromatic Malvani masala.",
+    mainKeyword: 'Malvani cuisine',
+    relatedKeywords: ['Malvani fish curry', 'Malvani masala', 'Solkadhi', 'Konkani coastal food'],
+    canonicalUrl: '/malvani-cuisine',
     subtitle: 'Journey along Maharashtra’s sun-drenched coastline where Triphala and Aamsul elevate the treasures of the Arabian Sea.',
     region: 'Konkan & Malvan',
     category: 'Coastal Heritage',
@@ -97,13 +110,14 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Sindhudurg Native & Marine Food Writer',
       avatarText: 'SP'
     },
-    image: '/src/assets/images/malvani_fish_curry_solkadhi_1791952785644.jpg',
-    imageCaption: 'Rich Malvani Surmai curry slow-simmered in an earthenware pot, accompanied by blush-pink Solkadhi and warm rice Bhakri.',
+    image: '/images/malvani-cuisine-fish-curry-solkadhi.jpg',
+    imageCaption: 'Traditional coastal Malvani cuisine featuring fresh fish curry in a clay pot with pink solkadhi and rice bhakri.',
+    imageAlt: 'Traditional coastal Malvani cuisine featuring fresh fish curry in a clay pot with pink solkadhi and rice bhakri',
     excerpt: 'In Malvan, seafood is not merely seasoned; it is married to freshly scraped coastal coconut, woodfire smoke, and the tart elixir of Kokum.',
     featured: false,
     introduction: [
       'The Konkan strip, pinched between the steep cliffs of the Western Ghats and the crashing Arabian Sea, is a world governed by the tides, swaying betel nut groves, and red laterite soil. Here, breakfast might be delicate net-like Ghavane, lunch an aromatic Surmai (kingfish) curry simmered in clay pots, and dinner a comforting bowl of crab masala alongside hot rice bhakri.',
-      'Unlike the neighboring Goan cuisine which carries Portuguese vinegar accents, Malvani culinary art relies on pure indigenous souring agents—primarily Kokum (Garcinia indica) and raw green mango—intertwined with complex hand-pounded Malvani masala.'
+      'Unlike the neighboring Goan culinary school which carries Portuguese vinegar accents, traditional Malvani cooking relies on pure indigenous souring agents—primarily Kokum (Garcinia indica) and raw green mango—intertwined with complex hand-pounded Malvani masala.'
     ],
     keyHighlights: [
       'The Holy Trinity: Freshly scraped wet coconut, tart dried Kokum (Aamsul), and rustic Malvani masala made with stone flower and star anise.',
@@ -112,11 +126,11 @@ export const ARTICLES: BlogArticle[] = [
     ],
     sections: [
       {
-        heading: 'The Soul of Malvani Masala and Tirphal',
-        subheading: 'A 16-Spice Matrix Engineered for Seafood',
+        heading: 'What is authentic Malvani cuisine?',
+        subheading: 'The Coastal Chemistry of Coconut and Kokum',
         paragraphs: [
-          'Malvani cooking demands a distinct spice blend. Sun-dried red Byadgi and Shankeshwari chillies are roasted slowly in peanut oil alongside coriander seeds, cumin, stone flower (dagad phool), mace, cloves, and dry coconut. The resulting spice paste has a warm, deep mahogany hue that gives Malvani curries their dramatic crimson sheen without burning the tongue.',
-          'For oily fish like mackerel (Bangda) and sardine (Tarli), Malvani cooks deploy Tirphal (Teppal). Just two or three cracked green berries dropped into a simmering coconut stew release a citrusy, woody burst that cuts through the oily fish oils with laser precision.'
+          'Authentic Malvani cuisine is the traditional coastal culinary art of South Konkan, characterized by liberal use of fresh wet coconut, tangy dried kokum (aamsul), and morning catch from the Arabian Sea. Unlike Goan cooking which incorporates Portuguese vinegar, Malvani cooks achieve natural sourness and rich color exclusively through native sun-cured kokum and stone-ground spices.',
+          'The cuisine forms a cornerstone of traditional Maharashtra cuisine, representing the state’s marine wealth alongside the inland red meat curries of Kolhapuri cuisine. Freshness is paramount: seafood caught at dawn in Malvan, Vengurla, or Devgad is cleaned with sea salt and cooked within hours in unglazed clay earthenware.'
         ],
         ingredientSpotlight: {
           name: 'Kokum (Aamsul / Ratambi)',
@@ -125,22 +139,22 @@ export const ARTICLES: BlogArticle[] = [
         }
       },
       {
-        heading: 'Solkadhi: The Universal Digestive Elixir',
-        subheading: 'The Science Behind the Pink Elixir',
+        heading: 'How is traditional Malvani fish curry cooked with Malvani masala?',
+        subheading: 'Mastering the 16-Spice Coastal Matrix and Tirphal',
         paragraphs: [
-          'No coastal meal in Maharashtra is complete without Solkadhi. The process is artisanal: freshly grated coconut is blended with warm water and squeezed through fine muslin cloth to extract thick, velvety coconut cream.',
-          'Deep ruby kokum petals are soaked in warm water to extract their tangy crimson juice. When the sour kokum extract meets the rich coconut milk, a chemical transformation occurs—the liquid turns into a radiant baby pink. Pounded garlic cloves, crushed green chillies, rock salt, and chopped cilantro are whisked in.',
-          'Drunk at the end of a rich seafood meal or poured generously over steaming white rice, Solkadhi cools internal digestive heat and balances the fiery spices effortlessly.'
+          'Traditional Malvani fish curry is prepared by gently simmering fresh surmai (kingfish) or pomfret in rich coconut milk, steeped kokum rinds, and roasted Malvani masala. The 16-spice Malvani masala infuses the coastal gravy with stone flower, coriander, and fiery Byadgi chillies, while wild Tirphal berries provide a subtle citrus numbness that balances the natural richness of the fish.',
+          'The process is meticulous: sun-dried red Byadgi and Shankeshwari chillies are roasted slowly in unrefined peanut oil alongside coriander seeds, cumin, stone flower (dagad phool), mace, cloves, and dry coconut. The resulting spice paste has a warm, deep mahogany hue that gives Malvani curries their dramatic crimson sheen without scorching the palate.',
+          'For oily fish like mackerel (Bangda) and sardine (Tarli), Malvani cooks deploy Tirphal (Teppal). Just two or three cracked green berries dropped into a simmering coconut stew release a citrusy, woody burst that cuts through the oily fish oils with laser precision.'
         ],
         quote: 'Solkadhi is not a drink; it is an embrace from the coastal soil after a storm of chilies.',
         quoteAttribution: 'Chef Vishwanath Shenoy, Malvan'
       },
       {
-        heading: 'From Tisrya to Chimbori: Shellfish Specialties',
-        subheading: 'Coastal Foraging in the Backwaters',
+        heading: 'Solkadhi and Shellfish Specialties of the Konkan',
+        subheading: 'From Tisrya Clams to Chimbori Crab Stews',
         paragraphs: [
-          'Beyond prime fish steaks, the true test of a Konkani cook lies in Tisrya Sukka (clams in thick dry coconut gravy) and Chimbori Rassa (crab curry). Clams are simmered in their own sweet brine with roasted coconut paste, curry leaves, and a touch of jaggery to complement the shellfish sweetness.',
-          'Crab curries are cooked whole in mud pots over mango-wood fires, allowing the rich crab fat to melt into the spicy coconut broth, yielding an intoxicating seafood aroma that can be smelled across the village lane.'
+          'No coastal meal in Maharashtra is complete without Solkadhi. The process is artisanal: freshly grated coconut is blended with warm water and squeezed through fine muslin cloth to extract thick, velvety coconut cream. When mixed with soaked ruby kokum extract, crushed garlic, and green chillies, it turns baby pink and serves as the ultimate digestive cooler.',
+          'Beyond prime fish steaks, the true test of a Konkani cook lies in Tisrya Sukka (clams in thick dry coconut gravy) and Chimbori Rassa (crab curry), which echo the fast-paced seafood fry stalls celebrated in Maharashtrian street food.'
         ]
       }
     ],
@@ -160,11 +174,17 @@ export const ARTICLES: BlogArticle[] = [
       proTip: 'Never boil seafood in a coconut gravy for more than 7 to 8 minutes. Gently slide the fish in when the curry is simmering, turn off the heat, cover with a lid, and let the residual steam poach the fish to buttery tenderness.'
     },
     conclusion: 'The cuisine of the Konkan is an ode to the rhythm of nature. By relying on what the sea provides in the morning and what the coconut palms yield in the afternoon, Malvani food represents sustainable, seasonal eating at its purest.',
-    tags: ['Konkan', 'Malvan', 'Seafood', 'Solkadhi', 'Kokum', 'Coastal']
+    tags: ['Malvani cuisine', 'Konkan', 'Seafood', 'Solkadhi', 'Kokum', 'Coastal']
   },
   {
-    id: 'fire-of-vidarbha-saoji-cuisine',
+    id: 'saoji-cuisine',
     title: 'The Fire of Vidarbha: Saoji Spices and the Weaver Community’s Legendary Stews',
+    h1Title: 'Saoji Cuisine: The Fiery Weaver Heritage of Vidarbha',
+    seoTitle: 'Saoji Cuisine: Famous Dishes and Flavours',
+    metaDescription: 'Discover authentic Saoji cuisine from Vidarbha, featuring 24-spice tarri gravy, slow-cooked meat, and the heritage of the Halba Koshti weavers.',
+    mainKeyword: 'Saoji cuisine',
+    relatedKeywords: ['Saoji masala', 'Vidarbha food', 'tarri'],
+    canonicalUrl: '/saoji-cuisine',
     subtitle: 'Unlocking the fiercely guarded 24-spice secrets of the Halba Koshti weavers from Nagpur.',
     region: 'Vidarbha & Saoji',
     category: 'Folk Heritage',
@@ -177,8 +197,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Nagpur Food Chronicler & Heritage Chef',
       avatarText: 'TM'
     },
-    image: '/src/assets/images/saoji_vidarbha_curry_1791974397402.jpg',
+    image: '/images/saoji_vidarbha_curry_1791974397402.jpg',
     imageCaption: 'Authentic Vidarbha Saoji mutton curry slow-simmered in an iron vessel with its fiery black-red tarri oil layer and hot jowar bhakri.',
+    imageAlt: 'Authentic Vidarbha Saoji mutton curry slow-simmered in an iron vessel with fiery black-red tarri oil layer and jowar bhakri',
     excerpt: 'Saoji food is not merely spicy for the sake of shock value; it is a masterclass in slow-roasted whole spices, black stone flower, and lingering aromatic heat.',
     featured: false,
     introduction: [
@@ -242,8 +263,14 @@ export const ARTICLES: BlogArticle[] = [
     tags: ['Vidarbha', 'Nagpur', 'Saoji', 'Spicy', 'Mutton', 'Folk Tradition']
   },
   {
-    id: 'kolhapur-royal-rassa-tambda-pandhra',
-    title: 'Kolhapur’s Royal Rassa: The Dual Poetry of Tambda and Pandhra',
+    id: 'kolhapuri-cuisine',
+    title: 'Kolhapuri Cuisine: Famous Dishes and Flavours',
+    h1Title: 'Kolhapuri Cuisine: Famous Dishes and Flavours',
+    seoTitle: 'Kolhapuri Cuisine: Famous Dishes and Flavours',
+    metaDescription: 'Discover Kolhapuri cuisine, famous for bold spices, Kolhapuri misal and tambda rassa. Learn about traditional dishes, ingredients and flavours.',
+    mainKeyword: 'Kolhapuri cuisine',
+    relatedKeywords: ['Kolhapuri misal', 'tambda rassa', 'pandhra rassa', 'mutton sukka'],
+    canonicalUrl: '/kolhapuri-cuisine',
     subtitle: 'Inside the martial kitchens of the Marathas where fiery red broth and soothing white nectar coexist on a single plate.',
     region: 'Kolhapur',
     category: 'Royal Heritage',
@@ -256,8 +283,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Heritage Culinary Archivist, Kolhapur',
       avatarText: 'RG'
     },
-    image: '/src/assets/images/kolhapuri_tambda_pandhra_rassa_1791952785970.jpg',
-    imageCaption: 'The legendary Kolhapuri mutton thali: fiery Tambda Rassa in hammered copper and soothing white Pandhra Rassa in ceramic.',
+    image: '/images/kolhapuri-cuisine-tambda-pandhra-rassa.jpg',
+    imageCaption: 'Authentic Kolhapuri cuisine mutton thali with fiery tambda rassa, soothing pandhra rassa, and jowar bhakri.',
+    imageAlt: 'Authentic Kolhapuri cuisine mutton thali with fiery tambda rassa, soothing pandhra rassa, and jowar bhakri',
     excerpt: 'In Kolhapur, broth is an art form. Tambda Rassa fires up the warrior spirit; Pandhra Rassa heals and calms the soul.',
     featured: false,
     introduction: [
@@ -271,11 +299,11 @@ export const ARTICLES: BlogArticle[] = [
     ],
     sections: [
       {
-        heading: 'Tambda Rassa: The Liquid Fire of Chhatrapati Shahu’s City',
-        subheading: 'Red Broth Born from Lavangi and Kanda Lasun Masala',
+        heading: 'What defines traditional Kolhapuri cuisine?',
+        subheading: 'The Royal Maratha Lineage of Fire and Serenity',
         paragraphs: [
-          'Tambda Rassa gets its fierce hue not from artificial food coloring, but from Kolhapuri Kanda Lasun Masala—a hand-pounded paste of slow-cooked red onions, purple garlic, and sun-cured Kolhapuri red chillies.',
-          'The broth is built on bone marrow stock (Mutton che Paani). Tender pieces of goat meat and marrow bones are simmered with turmeric and sea salt until the broth is rich in gelatin. The spice temper is added in a smoking cast-iron vessel, causing the kitchen to erupt in fragrant steam. When served hot, it demands to be crushed into jowar bhakri with fingers.'
+          'Traditional Kolhapuri cuisine is defined by its bold, unapologetic use of indigenous Lavangi chillies, slow-caramelized Kanda Lasun Masala, and the famous dual-rassa broth tradition. Originating from the royal kitchens and historic wrestling akharas of southern Maharashtra, this culinary style pairs fiery meat broths with soothing white coconut soups to maintain stamina and digestive balance.',
+          'Unlike the milder tamarind-jaggery seasonings common in Pune and Desh, Kolhapuri cuisine embraces rustic warrior nourishment. The food is celebrated as one of the most prominent pillars of traditional food of Maharashtra, standing proudly alongside coastal Malvani cuisine.'
         ],
         ingredientSpotlight: {
           name: 'Kolhapuri Kanda Lasun Masala',
@@ -284,22 +312,22 @@ export const ARTICLES: BlogArticle[] = [
         }
       },
       {
-        heading: 'Pandhra Rassa: The Soothing Nectar of White Spices',
-        subheading: 'The Royal French and Maratha Culinary Exchange',
+        heading: 'Why are tambda rassa and Kolhapuri misal so famous across India?',
+        subheading: 'The Secrets of Kanda Lasun Masala and Layered Broths',
         paragraphs: [
-          'Folklore traces Pandhra Rassa to the royal kitchens of the Kolhapur Darbar during the reign of Chhatrapati Shahu Maharaj, who entertained foreign dignitaries and French consuls. The royal cooks designed a mild, rich broth that could be sipped directly from a cup like a delicate consommé.',
-          'Pandhra Rassa contains no red chillies, turmeric, or garlic. Instead, the goat bone stock is simmered with freshly squeezed coconut milk, white poppy seeds (khus khus), white sesame, green cardamom, cinnamon, and a hint of mace. A single slit green chilli is briefly swirled in for gentle aroma without coloring the ivory broth.',
-          'Sipping warm Pandhra Rassa between mouthfuls of spicy Tambda is the ultimate palate cleanser, neutralizing the capsaicin burn with silky plant lipids.'
+          'Tambda rassa and Kolhapuri misal are famous across India because they demonstrate the absolute pinnacle of Maharashtrian spice layering without reliance on artificial food coloring. Tambda rassa delivers a gelatinous bone broth infused with red chili oil, while authentic Kolhapuri misal drenches sprouted moth beans and crispy farsan in a blistering, aromatic "kat" broth that delivers unforgettable heat.',
+          'Tambda Rassa is built on bone marrow stock (Mutton che Paani). Tender pieces of goat meat and marrow bones are simmered with turmeric and sea salt until the broth is rich in gelatin. The spice temper is added in a smoking cast-iron vessel, causing the kitchen to erupt in fragrant steam. When served hot, it demands to be crushed into jowar bhakri with fingers.',
+          'To balance this fire, the royal court conceived Pandhra Rassa. Containing no red chillies, turmeric, or garlic, Pandhra Rassa simmers mutton bone broth with freshly pressed coconut milk, white poppy seeds (khus khus), white sesame, and green cardamom, creating a comforting digestive nectar.'
         ],
         quote: 'You do not eat Kolhapuri rassa with a spoon. You tear the bhakri, soak it until it disappears into the soup, and drink the plate clean.',
         quoteAttribution: 'Late Bhaurao Patil, Kolhapur Pehelwan & Chef'
       },
       {
-        heading: 'The Sacred Jowar Bhakri',
-        subheading: 'Hand-Patted Sorghum Flatbread on Iron Tawa',
+        heading: 'The Sacred Jowar Bhakri and Mutton Sukka Harmony',
+        subheading: 'Hand-Patted Sorghum Flatbread on Concave Iron Tawa',
         paragraphs: [
           'No wheat roti or refined naan has any place next to Kolhapuri rassa. The only acceptable vessel is Jowar Bhakri—made from freshly milled sorghum flour kneaded with hot water and hand-patted on wooden boards with rhythmic clapping sounds.',
-          'Cooked over roaring flames on a concave iron griddle (Tava), the bhakri puffs up, developing a paper-thin crispy top skin and a soft, absorbent underbelly that drinks up the broths like a sponge.'
+          'Paired with Mutton Sukka—succulent goat meat dry-roasted in caramelized onions and browned coconut—and washed down with fiery Kat, Kolhapuri dining represents culinary theatre at its finest.'
         ]
       }
     ],
@@ -319,11 +347,17 @@ export const ARTICLES: BlogArticle[] = [
       proTip: 'Add the coconut milk only at the very end on low flame, and remove from heat immediately before a rolling boil to prevent the milk fats from curdling.'
     },
     conclusion: 'The gastronomic genius of Kolhapur lies in this sublime duality. It shows that ancient Indian cooks understood the chemistry of heat and relief, turning dinner into a theatrical encounter between fire and serenity.',
-    tags: ['Kolhapur', 'Tambda Rassa', 'Pandhra Rassa', 'Mutton', 'Royal Cuisine']
+    tags: ['Kolhapuri cuisine', 'Kolhapuri misal', 'tambda rassa', 'Mutton', 'Royal Cuisine']
   },
   {
-    id: 'khandesh-black-gold-kala-masala-shev-bhaji',
+    id: 'khandeshi-cuisine',
     title: 'Khandesh’s Black Gold: The Legend of Kala Masala and Shev Bhaji',
+    h1Title: 'Khandeshi Cuisine: Kala Masala and Spicy Shev Bhaji',
+    seoTitle: 'Khandeshi Cuisine: Famous Dishes and Flavours',
+    metaDescription: 'Discover Khandeshi cuisine, renowned for charcoal-roasted kala masala, spicy shev bhaji, and authentic Dhule-Jalgaon culinary traditions.',
+    mainKeyword: 'Khandeshi cuisine',
+    relatedKeywords: ['kala masala', 'shev bhaji', 'Jalgaon bharta'],
+    canonicalUrl: '/khandeshi-cuisine',
     subtitle: 'From smoke-roasted whole spices to fire-roasted brinjal bharta, exploring the fierce culinary heart of north Maharashtra.',
     region: 'Khandesh',
     category: 'Rustic Heartland',
@@ -336,8 +370,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Jalgaon Agri-Culinary Researcher',
       avatarText: 'GC'
     },
-    image: '/src/assets/images/khandeshi_shev_bhaji_curry_1791974397462.jpg',
+    image: '/images/khandeshi_shev_bhaji_curry_1791974397462.jpg',
     imageCaption: 'A steaming bowl of Khandeshi Shev Bhaji with its signature dark charcoal-roasted kala masala tarri and thick crispy besan shev.',
+    imageAlt: 'Steaming bowl of Khandeshi Shev Bhaji with dark charcoal-roasted kala masala tarri and crispy besan shev',
     excerpt: 'In Khandesh, spice is not ground raw. It is pushed to the edge of darkness through patient smoke-roasting over charcoal.',
     featured: false,
     introduction: [
@@ -402,8 +437,14 @@ export const ARTICLES: BlogArticle[] = [
     tags: ['Khandesh', 'Kala Masala', 'Shev Bhaji', 'Jalgaon', 'Rustic', 'Spicy']
   },
   {
-    id: 'brahmin-kitchens-of-pune-goda-masala',
+    id: 'puneri-cuisine',
     title: 'The Brahmin Kitchens of Pune: Subtle Goda Masala and Wholesome Desh Classics',
+    h1Title: 'Puneri Cuisine: Authentic Goda Masala and Festive Dishes',
+    seoTitle: 'Puneri Cuisine: Traditional Dishes and Flavours',
+    metaDescription: 'Discover authentic Puneri cuisine, featuring stone-flower goda masala, comforting varan bhaat, festive puran poli, and delicate Peshwa classics.',
+    mainKeyword: 'Puneri cuisine',
+    relatedKeywords: ['goda masala', 'varan bhaat', 'puran poli'],
+    canonicalUrl: '/puneri-cuisine',
     subtitle: 'Inside the quiet courtyards of the historic wadas where aromatic sweetness, stone flower, and pure ghee reign supreme.',
     region: 'Pune & Desh',
     category: 'Vegetarian Heritage',
@@ -416,8 +457,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Pune Culinary Historian & Author',
       avatarText: 'RJ'
     },
-    image: '/src/assets/images/pune_varan_bhaat_ghee_1791974397530.jpg',
+    image: '/images/pune_varan_bhaat_ghee_1791974397530.jpg',
     imageCaption: 'A traditional serene Puneri feast with fragrant Varan Bhaat, golden saajuk toop, Katachi Amti, and Puran Poli.',
+    imageAlt: 'Traditional serene Puneri feast with fragrant Varan Bhaat, golden saajuk toop, Katachi Amti, and Puran Poli',
     excerpt: 'Puneri cuisine is an exercise in subtle elegance: onion and garlic take a backseat to sweet jaggery, nutty sesame, and aromatic Goda Masala.',
     featured: false,
     introduction: [
@@ -481,8 +523,14 @@ export const ARTICLES: BlogArticle[] = [
     tags: ['Pune', 'Desh', 'Goda Masala', 'Varan Bhaat', 'Puran Poli', 'Vegetarian']
   },
   {
-    id: 'marathwada-rustic-resilience-pithla-bhakri',
+    id: 'marathwada-cuisine',
     title: 'Marathwada’s Rustic Resilience: Millets, Pithla Bhakri, and Fiery Thecha',
+    h1Title: 'Marathwada Cuisine: Rustic Pithla Bhakri and Garlic Thecha',
+    seoTitle: 'Marathwada Cuisine: Traditional Food and Flavours',
+    metaDescription: 'Discover rustic Marathwada cuisine, from golden pithla and coarse bajra bhakri to fiery mortar-pounded green chilli garlic thecha.',
+    mainKeyword: 'Marathwada cuisine',
+    relatedKeywords: ['pithla bhakri', 'thecha', 'zunka bhakri'],
+    canonicalUrl: '/marathwada-cuisine',
     subtitle: 'How drought-resilient millets, wild greens, and cast-iron pounded garlic chillies fueled generations of farmers and warriors.',
     region: 'Marathwada',
     category: 'Agrarian Traditions',
@@ -495,8 +543,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Agrarian Food Historian & Folklorist, Nanded',
       avatarText: 'BS'
     },
-    image: '/src/assets/images/marathwada_pithla_thecha_bhakri_1791974399312.jpg',
+    image: '/images/marathwada_pithla_thecha_bhakri_1791974399312.jpg',
     imageCaption: 'Golden steaming Pithla in a rustic earthenware bowl with roasted Bajra Bhakri, hand-pounded green chili Thecha, and purple onions.',
+    imageAlt: 'Golden steaming Pithla in an earthenware bowl with roasted Bajra Bhakri, green chili Thecha, and purple onions',
     excerpt: 'When unexpected guests arrive in rural Maharashtra, you don’t panic—you whip up golden Pithla, pound fiery Thecha, and clap out a hot Bhakri in minutes.',
     featured: false,
     introduction: [
@@ -560,8 +609,14 @@ export const ARTICLES: BlogArticle[] = [
     tags: ['Marathwada', 'Pithla', 'Bhakri', 'Thecha', 'Zunka', 'Rustic', 'Vegan']
   },
   {
-    id: 'steamed-jewels-ukdiche-modak-festive-sweets',
+    id: 'ukdiche-modak',
     title: 'The Steamed Jewels: Sacred Ukdiche Modak and Festive Confectionery',
+    h1Title: 'Ukdiche Modak: Traditional Steamed Festive Sweet of Maharashtra',
+    seoTitle: 'Ukdiche Modak: Traditional Steamed Festive Sweet',
+    metaDescription: 'Learn about authentic Ukdiche Modak, Maharashtra\'s sacred steamed rice flour dumpling filled with fresh coconut, jaggery, and fragrant cardamom.',
+    mainKeyword: 'ukdiche modak',
+    relatedKeywords: ['steamed modak', 'Maharashtrian festive sweets', 'modak recipe'],
+    canonicalUrl: '/ukdiche-modak',
     subtitle: 'Mastering the 21-fold artisanal pastry dedicated to Lord Ganesha, where fragrant cardamom, jaggery, and steamed rice dough converge.',
     region: 'Pan-Maharashtra',
     category: 'Sacred Confectionery',
@@ -574,8 +629,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Master Confectioner & Heritage Baker',
       avatarText: 'MV'
     },
-    image: '/src/assets/images/ukdiche_modak_festive_sweet_1791952786843.jpg',
+    image: '/images/ukdiche_modak_festive_sweet_1791952786843.jpg',
     imageCaption: 'Pristine, hand-pleated Ukdiche Modak dumplings glistening with pure cow ghee on a fresh green banana leaf with temple lamps.',
+    imageAlt: 'Pristine hand-pleated Ukdiche Modak dumplings glistening with pure cow ghee on a fresh green banana leaf',
     excerpt: 'Ukdiche Modak is not merely a dumpling; it is an architectural marvel of pinched rice flour petals encasing sweet molten coconut.',
     featured: false,
     introduction: [
@@ -639,9 +695,15 @@ export const ARTICLES: BlogArticle[] = [
     tags: ['Modak', 'Dessert', 'Ganeshotsav', 'Festive', 'Steamed', 'Vegetarian']
   },
   {
-    id: 'street-food-symphony-mumbai-misal-vada-pav',
-    title: 'The Street Food Symphony of Mumbai & Beyond: Misal, Vada Pav, and Pav Bhaji',
-    subtitle: 'From mill-worker snacks outside textile gates to global icons of fast-paced urban comfort.',
+    id: 'maharashtrian-street-food',
+    title: 'Maharashtrian Street Food: Famous Local Dishes',
+    h1Title: 'Maharashtrian Street Food: Famous Local Dishes',
+    seoTitle: 'Maharashtrian Street Food: Famous Local Dishes',
+    metaDescription: 'Discover Maharashtrian street food, including vada pav, misal pav and other popular local snacks. Explore their flavours, ingredients and origins.',
+    mainKeyword: 'Maharashtrian street food',
+    relatedKeywords: ['vada pav', 'misal pav', 'pav bhaji', 'kanda bhaji', 'tarri rassa'],
+    canonicalUrl: '/maharashtrian-street-food',
+    subtitle: 'From mill-worker snacks outside textile gates to global icons of fast-paced urban comfort and blazing spices.',
     region: 'Mumbai & Street',
     category: 'Street Gastronomy',
     diet: 'Vegetarian',
@@ -653,50 +715,61 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Urban Food Journalist & Bombay Chronicler',
       avatarText: 'KS'
     },
-    image: '/src/assets/images/misal_pav_pune_street_1791952787373.jpg',
-    imageCaption: 'A bowl of bubbling Misal topped with crunchy golden farsan, sprouted matki beans, and a bowl of fiery red tarri alongside soft pavs.',
-    excerpt: 'Mumbai and Maharashtra’s street food is the culinary fuel of millions—dynamic, spicy, affordable, and unapologetically bold.',
+    image: '/images/maharashtrian-street-food-misal-vada-pav.jpg',
+    imageCaption: 'A vibrant spread of Maharashtrian street food featuring spicy misal pav with red tarri, golden farsan, and Mumbai vada pav.',
+    imageAlt: 'Maharashtrian street food spread featuring spicy misal pav with red tarri, crunchy farsan, buttery toasted pav, and authentic Mumbai vada pav',
+    excerpt: 'Maharashtrian street food is the culinary fuel of millions—dynamic, spicy, affordable, and powered by legendary staples like vada pav and misal pav.',
     featured: false,
     introduction: [
-      'If the palaces and wadas of Maharashtra preserved the classical culinary traditions, it was the bustling streets of Mumbai, Pune, and Nashik that democratized them. In the 1960s and 70s, as textile mills hummed across Mumbai’s Girangaon (the village of mills), hundreds of thousands of workers needed rapid, cheap, calorie-dense sustenance.',
-      'Out of this industrial crucible arose street staples that have conquered the world: the humble Vada Pav, the theatrical sizzling Pav Bhaji, and the complex regional rivalries of spicy Misal Pav.'
+      'If the royal palaces and heritage wadas of Maharashtra preserved classical banquet traditions, it was the vibrant street corners of Mumbai, Pune, and Nashik that gave birth to India’s most energetic food culture. During the 1960s and 70s, as textile mills hummed across Mumbai’s industrial belt, thousands of workers required swift, affordable, calorie-dense nourishment between grueling shifts.',
+      'From this crucible of urban industry emerged Maharashtrian street food—an electrifying culinary universe celebrated for legendary dishes like vada pav, fiery misal pav, buttery pav bhaji, and crunchy kanda bhaji.'
     ],
     keyHighlights: [
-      'The Vada Pav birthright: Ashok Vaidya’s 1966 invention outside Dadar station that combined batata vada with Portuguese ladi pav.',
-      'The Great Misal Spectrum: The contrasting styles of Kolhapuri Misal (fiery hot), Puneri Misal (pohe-layered and sweet-tangy), and Nashik Misal (black rassa and fried chillies).',
-      'The Tarri / Kat cut: The thin, blistering spiced oil broth poured over crunchy farsan and sprouted moth beans.'
+      'The Vada Pav birthright: Ashok Vaidya’s 1966 creation outside Dadar railway station pairing spiced batata vada with soft baker’s ladi pav.',
+      'The Great Misal Spectrum: Distinct regional styles from Kolhapuri misal with fiery kat to Puneri misal layered over poha and Nashik misal with black rassa.',
+      'The Tarri / Kat phenomenon: Blisteringly hot, aromatic spiced oil broths poured generously over crunchy farsan and sprouted moth beans.'
     ],
     sections: [
       {
-        heading: 'The Great Misal Wars of Western Maharashtra',
-        subheading: 'Puneri vs Kolhapuri vs Nashik: A Battle of Broths',
+        heading: 'What are the most popular Maharashtrian street food snacks?',
+        subheading: 'Vada Pav, Misal Pav, and Pav Bhaji Defined',
         paragraphs: [
-          'Misal is not a single dish; it is a regional battleground. In Kolhapur, Misal is unforgivingly fiery—sprouted moth beans (matki) sit under a mountain of spicy sev, drenched in fiery red Kat made from Kolhapuri chillies and mutton stock seasonings (even in vegetarian stalls!).',
-          'In Pune, Misal adopts a gentler disposition: the bowl begins with a base layer of soft flattened rice (pohe), followed by boiled potatoes and sprouted matki, topped with a balanced, sweet-tangy rassa infused with Goda Masala.',
-          'Travel north to Nashik, and the Misal turns dark and smoky, utilizing Khandeshi Kala Masala, served with extra bowls of blistered green chillies and roasted papad. Every city believes its version is the undisputed original.'
+          'The most popular Maharashtrian street food snacks are Vada Pav, Misal Pav, Pav Bhaji, Kanda Bhaji, and Bhelpuri. Originating outside Mumbai and Pune textile mills and busy railway stations, these iconic dishes provide quick, affordable, and deeply flavorful nourishment to millions every single day.',
+          'Each preparation brings a distinct textural play: crisp gram-flour coatings, tender sprouted legumes, piping hot potato fritters, and soft baker’s pav brushed with butter or spicy chutneys. Together, they represent the democratic heartbeat of Maharashtra cuisine, bridging social divides across every railway platform and corner cart.',
+          'Unlike milder street foods of neighboring regions, Maharashtrian street food relies heavily on sharp garlic-chili chutneys, tart tamarind, and uninhibited spice blends that awaken the palate immediately.'
         ],
         ingredientSpotlight: {
           name: 'Dry Garlic Chutney (Lassun Khobra Chutney)',
           marathiName: 'लसूण खोबरे चटणी',
-          description: 'The iconic powdery red condiment sprinkled into Vada Pav, made from fried garlic cloves, roasted dry coconut, Kashmiri chillies, and fried chickpea batter crumbs (chura).'
+          description: 'The iconic fiery crimson powdery condiment sprinkled inside Vada Pav, prepared from golden-fried garlic, dry roasted coconut, Kashmiri chillies, and crispy gram flour chickpea crumbs (chura).'
         }
       },
       {
-        heading: 'The Vada Pav: Bombay’s Great Equalizer',
-        subheading: 'The Burger That Outsmarted Every Fast Food Chain',
+        heading: 'How did vada pav and misal pav become Maharashtra’s culinary icons?',
+        subheading: 'From Mill-Worker Rations to Global Cultural Symbols',
         paragraphs: [
-          'In 1966, outside Platform 1 of Dadar railway station, a vendor named Ashok Vaidya had a flash of genius. He took a spiced mashed potato ball (Batata Vada) dipped in besan batter and fried crisp, slit open a pillowy baker’s pav, smeared it with spicy green coriander chutney and sweet tamarind sauce, and stuffed the hot vada inside.',
-          'For a few paise, a mill worker could hold a complete hot meal in one hand while running for a local train. Decades later, despite the onslaught of multinational burger franchises, Vada Pav remains the supreme monarch of Indian street food, consumed by college students, corporate CEOs, and cab drivers alike.'
+          'Vada pav and misal pav became Maharashtra’s culinary icons because they offered delicious, spicy, and affordable fuel for working-class commuters and mill workers. Vada pav was invented in 1966 outside Dadar railway station by street vendor Ashok Vaidya as a portable hot meal, while misal pav evolved across Pune, Kolhapur, and Nashik as a fiery morning feast of sprouted moth beans and crunchy farsan.',
+          'For a few coins, an arriving commuter could hold a complete hot meal in one hand while catching a fast suburban train. Over the decades, vada pav evolved from a worker’s staple into Maharashtra’s ultimate street emblem—outpacing global fast-food burger chains with its combination of mustard-tempered mashed potatoes, turmeric, green chillies, and pillowy Portuguese-inspired ladi pav.',
+          'Simultaneously, misal pav captured the heart of breakfast gatherings across Western Maharashtra, pairing protein-rich sprouted matki beans with an addictive pool of spicy rassa that demands extra loaves of bread to soak up the aromatic oils.'
         ],
-        quote: 'Mumbai runs on local trains, monsoons, and Vada Pav. Remove any one, and the city collapses.',
-        quoteAttribution: 'Kumar Ketkar, veteran Mumbai editor'
+        quote: 'Mumbai and Maharashtra run on local trains, monsoons, and Vada Pav. Remove any one, and daily life comes to an abrupt halt.',
+        quoteAttribution: 'Kumar Ketkar, veteran Mumbai editor and cultural commentator'
       },
       {
-        heading: 'Pav Bhaji: Midnight Theatre on Giant Iron Tawas',
-        subheading: 'The Mash That Fueled the Cotton Exchange Traders',
+        heading: 'What makes the regional misal pav styles of Kolhapur, Pune, and Nashik so distinct?',
+        subheading: 'Broths, Spice Blends, and Toppings Compared',
         paragraphs: [
-          'In the late 19th century, traders at the Bombay Cotton Exchange waited late into the night for cotton telegram prices from New York. Street vendors gathered leftover vegetables from nearby markets—potatoes, tomatoes, peas, cauliflower—mashed them together on giant flat iron tawas with butter and spices, and served the hot bhaji with bread rolls.',
-          'Today, watching a pav bhaji ustad smash steaming vegetables with a heavy wooden masher while sliding blocks of salted yellow butter across the tawa is pure urban culinary theatre.'
+          'The regional misal pav styles of Kolhapur, Pune, and Nashik are distinct because each city anchors the dish in its own local spice identity. Kolhapuri misal is fiercely spiced with local red chillies and rich kat broth, Puneri misal is layered over flattened rice with a sweeter tamarind and goda masala finish, and Nashik misal delivers dark, smoky notes derived from charcoal-roasted kala masala.',
+          'In Kolhapur, misal is a test of courage: sprouted legumes are buried under spicy sev and drenched in a blistering red broth seasoned with the legendary Kolhapuri Kanda Lasun Masala, often served with extra cups of smoking "kat".',
+          'In Pune, the dish takes on balanced sophistication: the bowl starts with a base of kanda pohe (savory flattened rice), followed by boiled potatoes and sprouted matki, topped with a gentle, fragrant rassa. Meanwhile, Nashik misal features an intensely dark, woodsmoke-scented gravy made with Khandeshi Kala Masala, accompanied by blistered green chillies and roasted papad.'
+        ]
+      },
+      {
+        heading: 'Pav Bhaji: Midnight Street Food Theatre on Giant Iron Tawas',
+        subheading: 'The Cotton Exchange Heritage That Conquered India',
+        paragraphs: [
+          'During the late 19th century, traders at the Bombay Cotton Exchange waited deep into the night for cotton telegram prices wired from New York. Innovative street cart cooks gathered surplus vegetables from nearby wholesale markets—potatoes, tomatoes, green peas, and bell peppers—and mashed them over smoking iron tawas with blocks of salted butter and warming spices.',
+          'Today, watching a pav bhaji maestro rhythmically pound steaming vegetables with a heavy brass or wooden masher while sliding slabs of golden butter across the curved tawa remains one of the greatest culinary spectacles in all of Maharashtrian street food.'
         ]
       }
     ],
@@ -707,20 +780,27 @@ export const ARTICLES: BlogArticle[] = [
       cookTime: '30 mins',
       servings: '4 servings',
       keyIngredients: [
-        'Sprouted Matki (moth beans) boiled with turmeric and salt',
-        'Roasted onion and dry coconut paste',
-        'Spicy Misal Masala or Kanda Lasun Masala',
-        'Generous peanut oil for creating the red Tarri float',
-        'Crunchy mixed farsan, diced red onions, and lime wedges'
+        'Sprouted Matki (moth beans) simmered with turmeric and rock salt',
+        'Roasted onion, dry coconut, and ginger-garlic paste',
+        'Spicy Misal Masala or authentic Kolhapuri Kanda Lasun Masala',
+        'Unrefined peanut oil for creating the red Tarri oil float',
+        'Crunchy mixed farsan, finely diced red onions, and fresh lime wedges',
+        'Fresh bakery ladi pav toasted with butter'
       ],
-      proTip: 'To get that authentic street-side bright red "Tarri" layer without excessive spice, dissolve Kashmiri chili powder in warm oil along with the masala paste before adding the legume broth.'
+      proTip: 'To achieve that signature street-cart crimson "Tarri" oil slick without overwhelming bitterness, dissolve Kashmiri red chili powder in warm peanut oil together with the cooked masala paste just before adding the legume broth.'
     },
-    conclusion: 'The street food of Maharashtra is a triumph of democratic taste. It demonstrates that the most enduring culinary creations often emerge not from royal banquets, but from the urgent necessity and creative hustle of working people.',
-    tags: ['Street Food', 'Mumbai', 'Misal Pav', 'Vada Pav', 'Pav Bhaji', 'Pune', 'Spicy']
+    conclusion: 'Maharashtrian street food is an enduring celebration of democratic taste and community ingenuity. It shows that the most beloved dishes often originate not inside aristocratic palaces, but from the resilience, pace, and honest flavors of ordinary street corners.',
+    tags: ['Maharashtrian street food', 'vada pav', 'misal pav', 'pav bhaji', 'Mumbai street food', 'spicy snacks']
   },
   {
-    id: 'fermented-preserved-sun-dried-lonche-sandge',
+    id: 'traditional-preserves',
     title: 'The Fermented, Preserved, and Sun-Dried: Lonche, Papad, and Sandge',
+    h1Title: 'Traditional Maharashtrian Preserves: Lonche and Sun-Dried Sandge',
+    seoTitle: 'Traditional Maharashtrian Preserves: Lonche and Sandge',
+    metaDescription: 'Discover traditional Maharashtrian food preservation, from sun-dried lentil sandge and fermented kurdai to ceramic-jar raw mango lonche.',
+    mainKeyword: 'Maharashtrian preserves',
+    relatedKeywords: ['lonche', 'sandge', 'kurdai', 'valavan'],
+    canonicalUrl: '/traditional-preserves',
     subtitle: 'Inside the summer terrace rituals of Maharashtrian grandmothers preparing the winter pantry.',
     region: 'Pan-Maharashtra',
     category: 'Preservation & Heritage',
@@ -733,8 +813,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Indigenous Food Systems Preservationist',
       avatarText: 'SK'
     },
-    image: '/src/assets/images/lonche_sandge_kurdai_preserves_1791974399228.jpg',
+    image: '/images/lonche_sandge_kurdai_preserves_1791974399228.jpg',
     imageCaption: 'Traditional sun-dried pantry delicacies: spicy raw mango kairi lonche in an authentic ceramic barni, crispy wheat kurdai, and dal sandge.',
+    imageAlt: 'Traditional sun-dried pantry delicacies: spicy raw mango kairi lonche in ceramic barni, wheat kurdai, and dal sandge',
     excerpt: 'Before refrigeration and industrial food packaging, summer was Maharashtra’s pantry-building season, turning sunshine into long-lasting nutrition.',
     featured: false,
     introduction: [
@@ -799,8 +880,14 @@ export const ARTICLES: BlogArticle[] = [
     tags: ['Preservation', 'Pickles', 'Lonche', 'Kurdai', 'Sandge', 'Heritage', 'Valavan']
   },
   {
-    id: 'koli-fisherfolk-bounties-bombil-crabs',
+    id: 'koli-seafood',
     title: 'The Koli Fisherfolk’s Heritage: Bombil Fry, Chimbori, and Sea Salt Alchemy',
+    h1Title: 'Koli Seafood Cuisine: Coastal Curries and Bombil Fry',
+    seoTitle: 'Koli Seafood: Coastal Curries and Bombil Fry',
+    metaDescription: 'Explore authentic Koli seafood dishes from Mumbai\'s coastal villages, featuring crispy bombil fry, spicy crab curry, and traditional sea salt gravies.',
+    mainKeyword: 'Koli seafood',
+    relatedKeywords: ['bombil fry', 'Koli masala', 'coastal seafood'],
+    canonicalUrl: '/koli-seafood',
     subtitle: 'Exploring the culinary traditions of Mumbai and Thane’s original inhabitants whose spicy seafood curries shaped the island city.',
     region: 'Konkan & Malvan',
     category: 'Indigenous Coastal',
@@ -813,8 +900,9 @@ export const ARTICLES: BlogArticle[] = [
       role: 'Versova Koliwada Chronicler & Seafood Chef',
       avatarText: 'HK'
     },
-    image: '/src/assets/images/malvani_fish_curry_solkadhi_1791952785644.jpg',
+    image: '/images/malvani_fish_curry_solkadhi_1791952785644.jpg',
     imageCaption: 'Crisp rava-crusted Bombay Duck (Bombil) fry served with fiery Koli fish curry, onion salad, and warm rice flatbread.',
+    imageAlt: 'Crisp rava-crusted Bombay Duck Bombil fry served with fiery Koli fish curry, onion salad, and warm rice flatbread',
     excerpt: 'Long before Bombay was seven islands welded into a metropolis, the Koli fisherfolk ruled the coast with Bombil, green chillies, and sun-dried fish.',
     featured: false,
     introduction: [
@@ -895,7 +983,7 @@ export const REGIONAL_FILTERS = [
 export const INITIAL_COMMENTS = [
   {
     id: 'c1',
-    articleId: 'architecture-of-maharashtrian-thali',
+    articleId: 'maharashtrian-thali',
     author: 'Sunil Kulkarni',
     date: 'October 13, 2026',
     comment: 'The explanation of the left vs right hemisphere of the banana leaf is spot on. My grandmother in Sangli always reprimanded us if we touched the salt or thecha with our right eating fingers instead of using the leaf geometry.',
@@ -903,7 +991,7 @@ export const INITIAL_COMMENTS = [
   },
   {
     id: 'c2',
-    articleId: 'konkan-malvan-coastal-alchemy',
+    articleId: 'malvani-cuisine',
     author: 'Meera Sawant',
     date: 'October 12, 2026',
     comment: 'Tirphal is so underrated! The subtle tingle it creates in Bangda curry cannot be described in words. Thank you for celebrating authentic Malvani heritage rather than generic restaurant curries.',
@@ -911,7 +999,7 @@ export const INITIAL_COMMENTS = [
   },
   {
     id: 'c3',
-    articleId: 'fire-of-vidarbha-saoji-cuisine',
+    articleId: 'saoji-cuisine',
     author: 'Amitabh Koshti',
     date: 'October 11, 2026',
     comment: 'Proud to see Halba Koshti weavers getting recognized for our authentic Saoji cuisine. The 24-spice formula with nagkeshar is indeed our community treasure.',
@@ -919,7 +1007,7 @@ export const INITIAL_COMMENTS = [
   },
   {
     id: 'c4',
-    articleId: 'kolhapur-royal-rassa-tambda-pandhra',
+    articleId: 'kolhapuri-cuisine',
     author: 'Digvijay Rane',
     date: 'October 10, 2026',
     comment: 'Kolhapuri Pandhra Rassa made with white poppy seeds and coconut milk is true royal comfort. Great tip on not boiling the coconut milk to prevent curdling.',
@@ -927,7 +1015,7 @@ export const INITIAL_COMMENTS = [
   },
   {
     id: 'c5',
-    articleId: 'brahmin-kitchens-of-pune-goda-masala',
+    articleId: 'puneri-cuisine',
     author: 'Pooja Bhave',
     date: 'October 9, 2026',
     comment: 'Varan Bhaat with saajuk toop will always be my absolute sanctuary dish. The writing captures the quiet rhythm of our sadashiv peth kitchens beautifully.',

@@ -21,13 +21,24 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       className="group relative flex flex-col bg-white border border-stone-200/90 rounded-xl overflow-hidden shadow-xs hover:shadow-md hover:border-stone-300 transition-all duration-300 cursor-pointer text-left"
     >
       {/* Visual Frame */}
-      <div className="relative aspect-[16/10] bg-stone-100 overflow-hidden">
+      <a 
+        href={`/${article.id}`}
+        onClick={(e) => {
+          e.preventDefault();
+          onReadArticle(article.id);
+        }}
+        className="block relative aspect-[16/10] bg-stone-100 overflow-hidden"
+      >
         <img
           src={article.image}
-          alt={article.title}
+          alt={article.imageAlt || article.imageCaption || article.title}
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           loading="lazy"
+          onError={(e) => {
+            // Graceful fallback to prevent broken icon border
+            e.currentTarget.classList.add('opacity-0');
+          }}
         />
         
         {/* Subtle scrim for clarity */}
@@ -35,6 +46,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
         {/* Bookmark Action Overlay */}
         <button
+          type="button"
           onClick={(e) => onToggleBookmark(article.id, e)}
           className={`absolute top-3 right-3 p-2 rounded-lg backdrop-blur-md transition-all ${
             isBookmarked
@@ -51,7 +63,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         <div className="absolute bottom-2.5 left-3 text-[11px] font-medium tracking-wide text-stone-200 drop-shadow-sm">
           {article.diet === 'Vegetarian' ? 'Pure Vegetarian' : 'Non-Vegetarian'}
         </div>
-      </div>
+      </a>
 
       {/* Content Container */}
       <div className="flex-1 p-5 flex flex-col justify-between space-y-3">
@@ -74,7 +86,15 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             className="font-serif text-lg sm:text-xl font-bold text-stone-900 group-hover:text-amber-950 transition-colors leading-snug line-clamp-2"
             style={{ textWrap: 'balance' }}
           >
-            {article.title}
+            <a
+              href={`/${article.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onReadArticle(article.id);
+              }}
+            >
+              {article.title}
+            </a>
           </h3>
 
           {/* Excerpt */}

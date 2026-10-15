@@ -224,7 +224,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-950 leading-[1.18] tracking-tight mb-4"
           style={{ textWrap: 'balance' }}
         >
-          {article.title}
+          {article.h1Title || article.title}
         </h1>
 
         {/* Subtitle Deck */}
@@ -259,9 +259,12 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           <div className="relative rounded-2xl overflow-hidden border border-stone-300/80 shadow-md aspect-[16/10] bg-stone-100">
             <img
               src={article.image}
-              alt={article.title}
+              alt={article.imageAlt || article.imageCaption || article.title}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.classList.add('opacity-0');
+              }}
             />
           </div>
           <figcaption className="text-xs font-serif italic text-stone-600 text-center mt-3">
@@ -448,6 +451,82 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           </div>
         </div>
 
+        {/* Curated Internal and External Regional Links with Descriptive Anchor Text */}
+        <div className="mt-10 p-6 bg-[#F6F1EA] border border-stone-200/90 rounded-xl space-y-4">
+          <h3 className="font-serif text-lg font-bold text-stone-900">
+            Explore More Traditional Maharashtra Food & Regional Cuisines
+          </h3>
+          <p className="text-xs text-stone-700 leading-relaxed font-sans">
+            Deepen your culinary understanding with our authoritative essays covering coastal, inland, and street traditions:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <li>
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onBack();
+                }}
+                className="inline-flex items-center gap-1.5 text-amber-900 hover:text-amber-950 font-semibold underline decoration-amber-900/40 hover:decoration-amber-900 transition-colors"
+              >
+                <span>← Maharashtra Cuisine: Traditional Food and Flavours</span>
+              </a>
+            </li>
+            {article.id !== 'maharashtrian-street-food' && (
+              <li>
+                <a
+                  href="/maharashtrian-street-food"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle('maharashtrian-street-food');
+                  }}
+                  className="inline-flex items-center gap-1.5 text-amber-900 hover:text-amber-950 font-semibold underline decoration-amber-900/40 hover:decoration-amber-900 transition-colors"
+                >
+                  <span>Famous Maharashtrian street food including vada pav and misal pav</span>
+                </a>
+              </li>
+            )}
+            {article.id !== 'kolhapuri-cuisine' && (
+              <li>
+                <a
+                  href="/kolhapuri-cuisine"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle('kolhapuri-cuisine');
+                  }}
+                  className="inline-flex items-center gap-1.5 text-amber-900 hover:text-amber-950 font-semibold underline decoration-amber-900/40 hover:decoration-amber-900 transition-colors"
+                >
+                  <span>Spicy Kolhapuri cuisine, Kolhapuri misal and tambda rassa</span>
+                </a>
+              </li>
+            )}
+            {article.id !== 'malvani-cuisine' && (
+              <li>
+                <a
+                  href="/malvani-cuisine"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle('malvani-cuisine');
+                  }}
+                  className="inline-flex items-center gap-1.5 text-amber-900 hover:text-amber-950 font-semibold underline decoration-amber-900/40 hover:decoration-amber-900 transition-colors"
+                >
+                  <span>Coastal Malvani cuisine, Malvani fish curry and Malvani masala</span>
+                </a>
+              </li>
+            )}
+            <li>
+              <a
+                href="https://www.maharashtratourism.gov.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-stone-700 hover:text-stone-900 underline decoration-stone-400 hover:decoration-stone-700 transition-colors"
+              >
+                <span>Official Maharashtra State Tourism Culinary Heritage Guide ↗</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
         {/* Community Dialogue / Comments Section */}
         <section className="mt-14 pt-8 border-t border-stone-200">
           <div className="flex items-center justify-between mb-6">
@@ -530,22 +609,26 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           </div>
         </section>
 
-        {/* Related Articles Carousel / Grid */}
+        {/* Related Articles Carousel / Grid with Semantic Anchor Tags */}
         <section className="mt-16 pt-10 border-t border-stone-300">
           <h3 className="font-serif text-2xl font-bold text-stone-900 mb-6">
             Continue Journeying Across Maharashtra
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedArticles.map((rel) => (
-              <div
+              <a
                 key={rel.id}
-                onClick={() => onReadArticle(rel.id)}
-                className="group cursor-pointer bg-white border border-stone-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+                href={`/${rel.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle(rel.id);
+                }}
+                className="group bg-white border border-stone-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-stone-100">
                   <img
                     src={rel.image}
-                    alt={rel.title}
+                    alt={rel.imageAlt || rel.imageCaption || rel.title}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -564,7 +647,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </section>

@@ -21,10 +21,14 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-8 h-20">
           
-          {/* Zone 1: Brand Wordmark (Single text element wordmark in display face) */}
+          {/* Zone 1: Brand Wordmark */}
           <div className="flex items-center gap-3 shrink-0">
-            <button 
-              onClick={() => onSelectTab('articles')}
+            <a 
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('articles');
+              }}
               className="group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 rounded-sm"
             >
               <div className="flex items-baseline gap-2">
@@ -38,13 +42,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               <p className="text-[11px] uppercase tracking-wider text-stone-700 hidden md:block">
                 Chronicles of Maharashtrian Multi-Cuisine
               </p>
-            </button>
+            </a>
           </div>
 
           {/* Zone 2: Clean 4–5 single-line text navigation links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
-            <button
-              onClick={() => onSelectTab('articles')}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('articles');
+              }}
               className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 pb-1 relative ${
                 currentTab === 'articles' ? 'text-amber-950 font-semibold' : ''
               }`}
@@ -53,9 +61,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               {currentTab === 'articles' && (
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-800" />
               )}
-            </button>
-            <button
-              onClick={() => onSelectTab('regions')}
+            </a>
+            <a
+              href="/regional-cuisines"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('regions');
+              }}
               className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 pb-1 relative ${
                 currentTab === 'regions' ? 'text-amber-950 font-semibold' : ''
               }`}
@@ -64,9 +76,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               {currentTab === 'regions' && (
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-800" />
               )}
-            </button>
-            <button
-              onClick={() => onSelectTab('spices')}
+            </a>
+            <a
+              href="/spice-heritage"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('spices');
+              }}
               className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 pb-1 relative ${
                 currentTab === 'spices' ? 'text-amber-950 font-semibold' : ''
               }`}
@@ -75,9 +91,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               {currentTab === 'spices' && (
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-800" />
               )}
-            </button>
-            <button
-              onClick={() => onSelectTab('about')}
+            </a>
+            <a
+              href="/about"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('about');
+              }}
               className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 pb-1 relative ${
                 currentTab === 'about' ? 'text-amber-950 font-semibold' : ''
               }`}
@@ -86,13 +106,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               {currentTab === 'about' && (
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-800" />
               )}
-            </button>
+            </a>
           </nav>
 
           {/* Zone 3: Primary Action */}
           <div className="flex items-center gap-3 shrink-0">
-            <button
-              onClick={() => onSelectTab('bookmarks')}
+            <a
+              href="/bookmarks"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('bookmarks');
+              }}
               className={`flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap shrink-0 border ${
                 currentTab === 'bookmarks'
                   ? 'bg-amber-900 text-white border-amber-900 shadow-sm'
@@ -105,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="font-mono text-xs tabular-nums opacity-90">
                 ({bookmarkCount})
               </span>
-            </button>
+            </a>
 
             {/* Mobile menu toggle */}
             <button
@@ -121,50 +145,71 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Mobile menu dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-stone-200/80 bg-[#FAF7F2] space-y-2">
-            <button
-              onClick={() => {
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
                 onSelectTab('articles');
                 setMobileMenuOpen(false);
               }}
-              className={`w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                 currentTab === 'articles' ? 'bg-amber-100/80 text-amber-900' : 'text-stone-700 hover:bg-stone-100'
               }`}
             >
-              All Articles (10 Chronicles)
-            </button>
-            <button
-              onClick={() => {
+              All Articles (11 Chronicles)
+            </a>
+            <a
+              href="/regional-cuisines"
+              onClick={(e) => {
+                e.preventDefault();
                 onSelectTab('regions');
                 setMobileMenuOpen(false);
               }}
-              className={`w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                 currentTab === 'regions' ? 'bg-amber-100/80 text-amber-900' : 'text-stone-700 hover:bg-stone-100'
               }`}
             >
               Regional Cuisines
-            </button>
-            <button
-              onClick={() => {
+            </a>
+            <a
+              href="/spice-heritage"
+              onClick={(e) => {
+                e.preventDefault();
                 onSelectTab('spices');
                 setMobileMenuOpen(false);
               }}
-              className={`w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                 currentTab === 'spices' ? 'bg-amber-100/80 text-amber-900' : 'text-stone-700 hover:bg-stone-100'
               }`}
             >
               Spice Heritage
-            </button>
-            <button
-              onClick={() => {
+            </a>
+            <a
+              href="/about"
+              onClick={(e) => {
+                e.preventDefault();
                 onSelectTab('about');
                 setMobileMenuOpen(false);
               }}
-              className={`w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                 currentTab === 'about' ? 'bg-amber-100/80 text-amber-900' : 'text-stone-700 hover:bg-stone-100'
               }`}
             >
               About Pangat
-            </button>
+            </a>
+            <a
+              href="/bookmarks"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectTab('bookmarks');
+                setMobileMenuOpen(false);
+              }}
+              className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                currentTab === 'bookmarks' ? 'bg-amber-100/80 text-amber-900' : 'text-stone-700 hover:bg-stone-100'
+              }`}
+            >
+              Saved Stories ({bookmarkCount})
+            </a>
           </div>
         )}
       </div>
